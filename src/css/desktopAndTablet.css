@@ -255,4 +255,8 @@ main{
     .inputsTermAndRate{
         grid-template-columns: 1fr;
     }
+    .title-and-link{
+        flex-direction: column;
+        align-items: start;
+    }
 }

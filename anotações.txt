@@ -1,7 +1,10 @@
 
 
 
-    fazer a parte mobile css
+    fazer a parte mobile css(
+
+        alterar o tamanho da parte title and link
+    )
 
 
     fazer o javascript de calcular(
