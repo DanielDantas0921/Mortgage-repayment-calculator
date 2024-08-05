@@ -77,6 +77,7 @@ main{
     border-color: #6B94A8;
     border-style: solid;
     border-radius: 4px ;
+    border-width: 1px;
     margin-top: 0.5rem;
 }
 .divInput div{
