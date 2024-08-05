@@ -26,14 +26,14 @@
             <div class="inputsTermAndRate">
               <div>
                 <label for="inputMortageTerm">Mortgage Term</label>
-                <div class="inputMortageTerm divInput mt-05 ">
+                <div class="inputMortageTerm divInput mt-05">
                   <input type="text" id="inputMortageTerm" />
                   <div><p>years</p></div>
                 </div>
               </div>
               <div>
                 <label for="inputMortageRate">Interest Rate</label>
-                <div class="inputMortageRate divInput mt-05"  >
+                <div class="inputMortageRate divInput mt-05">
                   <input type="text" id="inputMortageTerm" />
                   <div><p>%</p></div>
                 </div>
@@ -43,23 +43,31 @@
             <div class="divMortgageType">
               <p>Mortgage Type</p>
               <div class="divRepaymentInputRadio divInputRadio mt-05">
-                <input type="radio" name="mortgageType" id="repayment">
+                <input type="radio" name="mortgageType" id="repayment" />
                 <label for=""></label>
                 <label for="repayment" class="label">Repayment</label>
               </div>
               <div class="divInterestOnlyInputRadio divInputRadio mt-05">
-                <input type="radio" name="mortgageType" id="interestOnly">
+                <input type="radio" name="mortgageType" id="interestOnly" />
                 <label for=""></label>
                 <label for="interestOnly" class="label">Interest Only</label>
               </div>
             </div>
-        
 
+            <button class="btn">
+              <img src="./src/img/icon-calculator.svg" alt="" />
+              <p>Calculate Repayment</p>
+            </button>
           </div>
         </div>
-        <div class="MortgageResult"></div>
+        <div class="MortgageResult">
+          <div class="divResults">
+            <img src="./src/img/show-image.svg" alt="img" />
+            <h2>Results shows here</h2>
+            <p>Complete the form and click “calculate repayments” to see what your monthly repayments would be.</p>
+          </div>
+        </div>
       </div>
     </main>
-
   </body>
 </html>

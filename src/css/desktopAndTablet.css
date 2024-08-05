@@ -21,7 +21,7 @@ main{
 .container{
     max-width: 800px;
     width: 100%;
-    height: 400px;
+    height: auto;
     display: flex;
     box-shadow: 0 32px 64px rgb(10,48,65,10%);
     background-color: #ffffff;
@@ -62,7 +62,7 @@ main{
 .MortgageResult{
     background-color: #133041;
     width: 50%;
-    height: 100%;
+    height: auto;
     border-radius: 0 20px 20px 80px;
 }
 
@@ -138,12 +138,14 @@ main{
 .divInputRadio{
     width: 100%;
     height: 40px;
-    background-color: rgba(216,219,47 , 15%);
+    /* background-color: rgba(216,219,47 , 15%); */
     display: flex;
     align-items: center;
     gap: 5px;
     padding-left: 10px;
     position: relative;
+    border: 1px solid #6B94A8 ;
+    border-radius: 4px;
 }
 .label{
     width: 100%;
@@ -182,3 +184,74 @@ main{
 
 }
 
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    justify-self: start;
+    border: none;
+    background-color: #D8DB2F;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: #133041;
+}
+
+.MortgageResult{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: green; */
+}
+.divResults{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.divResults img{
+    /* text-align: center; */
+    width: 50%;
+    margin: 0 auto;
+    display: block;
+}
+.divResults h2{
+    width: max-content;
+    text-align: center;
+    justify-self: center;
+    margin-bottom: 0.2rem;
+    color: white;
+}
+
+.divResults p {
+    max-width: 45ch;
+   text-align: center;
+   color: #9ABED5;
+}
+
+/* tablet */
+
+@media (max-width: 800px){
+    .container{
+        flex-direction: column;
+        max-width: 85%;
+    } 
+    
+    .MortgageCalculator{
+        width: 100%;
+        padding: 30px;
+    }
+
+    .MortgageResult{
+        width: 100%;
+        padding: 20px;
+        border-radius: 0 0 20px 20px ;
+    }
+}
+
+@media (max-width: 400px){
+    .inputsTermAndRate{
+        grid-template-columns: 1fr;
+    }
+}

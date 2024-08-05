@@ -1,0 +1,14 @@
+
+
+
+    fazer a parte mobile css
+
+
+    fazer o javascript de calcular(
+       * fazer que quando a divs do mortgage type for selecionada ela marque o inputradio como checked e também ela pinte a div de 
+    /* background-color: rgba(216,219,47 , 15%); */
+
+    fazer o cálculo do repayment 
+
+    fazer o cálcuulo do interest Only
+    )
