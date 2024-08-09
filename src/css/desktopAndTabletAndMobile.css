@@ -196,6 +196,7 @@ main{
     padding: 5px 20px;
     border-radius: 20px;
     font-size: #133041;
+    cursor: pointer;
 }
 
 .MortgageResult{
@@ -251,12 +252,25 @@ main{
     }
 }
 
-@media (max-width: 400px){
+@media (max-width: 500px){
+
     .inputsTermAndRate{
         grid-template-columns: 1fr;
     }
     .title-and-link{
         flex-direction: column;
         align-items: start;
+        gap: 10px;
     }
+    .btn{
+        justify-self: center;
+    }
+}
+
+@media (max-width: 400px){
+    main{
+      align-items: start;
+      margin-top: 2rem;
+    }
+  
 }

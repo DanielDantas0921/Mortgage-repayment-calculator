@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Frontend Mentor | Mortgage repayment calculator</title>
     <link rel="stylesheet" href="./src/css/style.css" />
-    <script src="./src/js/script.js"></script>
+    <script src="./src/js/script.js" defer></script>
   </head>
   <body>
     <main>
@@ -20,21 +20,21 @@
               <label for="inputMortgageAmount">Mortgage Amount</label>
               <div class="inputMortageAmount divInput mt-05">
                 <div><p>£</p></div>
-                <input type="text" id="inputMortgageAmount" />
+                <input type="number" id="inputMortgageAmount" />
               </div>
             </div>
             <div class="inputsTermAndRate">
               <div>
                 <label for="inputMortageTerm">Mortgage Term</label>
                 <div class="inputMortageTerm divInput mt-05">
-                  <input type="text" id="inputMortageTerm" />
+                  <input type="number" id="inputMortageTerm" />
                   <div><p>years</p></div>
                 </div>
               </div>
               <div>
                 <label for="inputMortageRate">Interest Rate</label>
                 <div class="inputMortageRate divInput mt-05">
-                  <input type="text" id="inputMortageTerm" />
+                  <input type="number" id="inputMortageRate" />
                   <div><p>%</p></div>
                 </div>
               </div>
@@ -44,7 +44,7 @@
               <p>Mortgage Type</p>
               <div class="divRepaymentInputRadio divInputRadio mt-05">
                 <input type="radio" name="mortgageType" id="repayment" />
-                <label for=""></label>
+                <label for="repayment"></label>
                 <label for="repayment" class="label">Repayment</label>
               </div>
               <div class="divInterestOnlyInputRadio divInputRadio mt-05">
