@@ -40,30 +40,57 @@ const inputMortageRate = document.getElementById("inputMortageRate");
 //  repayment e interestOnly
 const btn = document.querySelector(".btn");
 
+function formatToGBP(amount) {
+  return amount.toLocaleString("en-GB", {
+    style: "currency",
+    currency: "GBP",
+  });
+}
+
 btn.addEventListener("click", function () {
   if (repayment.checked == true) {
-    const numberOfMonths = inputMortageTerm.value * 12
-    const monthlyInterest = inputMortageRate.value/(12 * 100)
-    const loan = inputMortgageAmount.value
-    const monthlyPayment = (loan * (monthlyInterest * Math.pow((1 + monthlyInterest), numberOfMonths))) / (Math.pow((1 + monthlyInterest), numberOfMonths) - 1)
-    const resultPayment = monthlyPayment * numberOfMonths
-    if(isNaN(monthlyPayment || isNaN(resultPayment))){
-        result
+    const numberOfMonths = Number(inputMortageTerm.value) * 12;
+    const monthlyInterest = Number(inputMortageRate.value) / (12 * 100);
+    const loan = Number(inputMortgageAmount.value);
+    const monthlyPayment = (
+      (loan * (monthlyInterest * Math.pow(1 + monthlyInterest, numberOfMonths))) /
+      (Math.pow(1 + monthlyInterest, numberOfMonths) - 1)
+    ).toFixed(2);
+    const resultPayment = (monthlyPayment * numberOfMonths).toFixed(2);
+    if (isNaN(monthlyPayment || isNaN(resultPayment))) {
+      result;
     }
-    console.log("o pagamento mensal é de: " + monthlyPayment)
-    console.log("O pagamento total é: " + resultPayment)
-
-
-
-
-    
-    const r = 0.05 / 12;
-    const L = 300000;
-    n = 360;
-    const pagamentoMensal = (loan * (r * Math.pow(1 + r, n))) / (Math.pow(1 + r, n) - 1);
-    
+    const monthlyPaymentFormated = formatToGBP(Number(monthlyPayment));
+    const resultPaymentFormated = formatToGBP(Number(resultPayment));
+    console.log("o pagamento mensal é de: " + monthlyPaymentFormated);
+    console.log("O pagamento total é: " + resultPaymentFormated);
   } else if (interestOnly.checked == true) {
+    const numberOfMonths = Number(inputMortageTerm.value) * 12;
+    const monthlyInterest = Number(inputMortageRate.value) / (12 * 100);
+    const loan = Number(inputMortgageAmount.value);
+    const monthlyPayment = (monthlyInterest * loan).toFixed(2);
+    const resultPayment = (monthlyPayment * numberOfMonths + loan).toFixed(2);
+    const monthlyPaymentFormated = formatToGBP(Number(monthlyPayment));
+    const resultPaymentFormated = formatToGBP(Number(resultPayment));
+    console.log("o pagamento mensal é de: " + monthlyPaymentFormated);
+    console.log("O pagamento total é: " + resultPaymentFormated);
   } else {
     return;
   }
 });
+
+// função para conectar a interface
+
+function connectResultToInterface(monthlyPayment, resultPayment) {
+  const divResultsNotEmpty = document.createElement("div");
+  divResultsNotEmpty.classList.add("DivResultNotEmpty");
+
+  const h3yourResults = document.createElement("h3");
+  h3yourResults.innerText = "Your results";
+
+  const pDescription = document.createElement("p");
+  pDescription.innerText =
+    "Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.";
+
+    const divResultValues = document.createElement("div")
+}
