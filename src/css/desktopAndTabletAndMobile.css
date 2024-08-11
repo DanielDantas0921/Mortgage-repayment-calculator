@@ -38,7 +38,7 @@ main {
 .title-and-link h1 {
   font-size: 1.3rem;
 }
-/* o a tem uma linha bem curtinha em baixo dele tem que fazer isso com after */
+
 .title-and-link a {
   text-decoration: none;
   color: black;
@@ -131,7 +131,6 @@ main {
 .divInputRadio {
   width: 100%;
   height: 40px;
-  /* background-color: rgba(216,219,47 , 15%); */
   display: flex;
   align-items: center;
   gap: 5px;
@@ -193,7 +192,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: green; */
 }
 .divResults {
   display: flex;
@@ -203,7 +201,6 @@ main {
 }
 
 .divResults img {
-  /* text-align: center; */
   width: 50%;
   margin: 0 auto;
   display: block;
@@ -232,7 +229,7 @@ main {
 }
 
 .DivResultNotEmpty > p {
-    color: #ffffff;
+    color: #9ABED5;
     margin-bottom: 1rem;
 }
 .DivResultValues{
@@ -240,7 +237,7 @@ main {
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.25);
     border-radius: 10px;
-    color:#ffffff;
+    color:#9ABED5;
     border-top: 3px solid #D8DB2F;
 }
 
@@ -253,10 +250,12 @@ main {
 
 #monthlyPayment{
     font-size: 2.5rem;
+    color: #D8DB2F;
 }
 
 #totalPayment{
-    font-size: 1.5rem;
+    font-size: 1.5rem;  
+    color: #ffffff;
 }
 
 

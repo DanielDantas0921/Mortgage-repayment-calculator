@@ -1,3 +1,5 @@
+import { connectResultToInterface } from "./functions.js";
+
 // selecionar divMortgage Type
 
 const divRepaymentInputRadio = document.querySelector(".divRepaymentInputRadio");
@@ -39,6 +41,8 @@ const inputMortageTerm = document.getElementById("inputMortageTerm");
 const inputMortageRate = document.getElementById("inputMortageRate");
 //  repayment e interestOnly
 const btn = document.querySelector(".btn");
+const divResults = document.querySelector(".divResults")
+const divResultNotEmpty = document.querySelector(".DivResultNotEmpty")
 
 function formatToGBP(amount) {
   return amount.toLocaleString("en-GB", {
@@ -62,18 +66,24 @@ btn.addEventListener("click", function () {
     }
     const monthlyPaymentFormated = formatToGBP(Number(monthlyPayment));
     const resultPaymentFormated = formatToGBP(Number(resultPayment));
-    console.log("o pagamento mensal é de: " + monthlyPaymentFormated);
-    console.log("O pagamento total é: " + resultPaymentFormated);
+    divResults.style.display = "none"
+    divResultNotEmpty.innerHTML = ""
+    connectResultToInterface(monthlyPaymentFormated,resultPaymentFormated)
+
   } else if (interestOnly.checked == true) {
     const numberOfMonths = Number(inputMortageTerm.value) * 12;
     const monthlyInterest = Number(inputMortageRate.value) / (12 * 100);
     const loan = Number(inputMortgageAmount.value);
     const monthlyPayment = (monthlyInterest * loan).toFixed(2);
     const resultPayment = (monthlyPayment * numberOfMonths + loan).toFixed(2);
+    if (isNaN(Number(monthlyPayment) || isNaN(Number(resultPayment)))) {
+      result;
+    }
     const monthlyPaymentFormated = formatToGBP(Number(monthlyPayment));
     const resultPaymentFormated = formatToGBP(Number(resultPayment));
-    console.log("o pagamento mensal é de: " + monthlyPaymentFormated);
-    console.log("O pagamento total é: " + resultPaymentFormated);
+    divResults.style.display = "none"
+    divResultNotEmpty.innerHTML = ""
+    connectResultToInterface(monthlyPaymentFormated,resultPaymentFormated)
   } else {
     return;
   }
@@ -81,16 +91,5 @@ btn.addEventListener("click", function () {
 
 // função para conectar a interface
 
-function connectResultToInterface(monthlyPayment, resultPayment) {
-  const divResultsNotEmpty = document.createElement("div");
-  divResultsNotEmpty.classList.add("DivResultNotEmpty");
 
-  const h3yourResults = document.createElement("h3");
-  h3yourResults.innerText = "Your results";
 
-  const pDescription = document.createElement("p");
-  pDescription.innerText =
-    "Your results are shown below based on the information you provided. To adjust the results, edit the form and click “calculate repayments” again.";
-
-    const divResultValues = document.createElement("div")
-}
